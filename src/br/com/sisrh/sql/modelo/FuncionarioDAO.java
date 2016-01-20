@@ -13,16 +13,22 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * 
  * @author Imaginatio
  */
 public class FuncionarioDAO {
-    private final Connection c;
+    private Connection c = null;
     
     public FuncionarioDAO() {
-        this.c = new Conexao().getConnection();
+        try {
+            this.c = new Conexao().getConnection();
+        } catch (SQLException ex) {
+            Logger.getLogger(FuncionarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public void addFuncionario(Funcionario func) {

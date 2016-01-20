@@ -18,19 +18,13 @@ import java.util.Scanner;
  */
 public class Menu {
     FuncionarioDAO func = new FuncionarioDAO();
-    Scanner input = new Scanner(System.in);
-    
-    public void cabecalho() {
-        System.out.println("\tSistema de RH");
-        System.out.println("Este programa foi criado utilizando postgreSQL v1.18.1");
-        System.out.println("Usa a conexao padrao: jdbc:postgresql://localhost:5432/");
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
+    Scanner input;
+
+    public Menu() {
+        this.input = new Scanner(System.in);
     }
+    
+    
     
     public void menu() {
         char op, v;
